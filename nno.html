@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degen Stats</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #1a1a2e; color: white; text-align: center; margin: 0; padding: 0; }
+        .container { width: 400px; margin: 50px auto; padding: 20px; background-color: #232946; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+        .title { color: #ff6f61; font-size: 28px; margin-bottom: 20px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
+        .stats, .user-input { margin: 15px 0; font-size: 18px; }
+        .highlight { color: #f1fa8c; font-size: 22px; }
+        input[type="text"] { padding: 10px; width: 90%; border-radius: 10px; border: 1px solid #444; margin-bottom: 10px; transition: border 0.3s; }
+        input[type="text"]:focus { border: 1px solid #ff6f61; outline: none; }
+        input[type="submit"] { padding: 10px 20px; border: none; border-radius: 10px; background-color: #ff6f61; color: white; font-size: 16px; cursor: pointer; transition: background-color 0.3s; }
+        input[type="submit"]:hover { background-color: #ff9472; }
+        .footer { font-size: 14px; color: #999; margin-top: 20px; }
+        .points-box { background-color: #3d3d5c; padding: 10px; border-radius: 10px; color: lime; margin-bottom: 20px; }
+
+        /* Custom style for boxes */
+        .rank-fid-box, .allowance-box, .tipped-remaining-box { background-color: #2c2c54; padding: 15px; border-radius: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .rank-fid-box .stats, .allowance-box .stats, .tipped-remaining-box .stats { flex: 1; text-align: center; }
+
+        /* Enhanced style for Tipped and Remaining box */
+        .tipped-remaining-box { border: 2px solid #ff6f61; background-color: #2c2c54; }
+        .tipped-remaining-box .stats { font-size: 20px; }
+
+        /* Responsive design for small screens */
+        @media (max-width: 400px) {
+            .container { width: 95%; }
+            .title { font-size: 24px; }
+            .stats, .footer { font-size: 16px; }
+            input[type="text"], input[type="submit"] { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">DEGEN STATS</div>
+
+        <!-- User Input Section -->
+        <form action="" method="POST">
+            <div class="user-input">
+                <label for="username">Enter Username:</label><br>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <input type="submit" value="Get Stats">
+        </form>
+
+        <!-- Tipped and Remaining Section in one box -->
+        <div class="tipped-remaining-box">
+            <div class="stats">Tipped: <span class="highlight">0</span></div>
+            <div class="stats">Remaining: <span class="highlight">2,639</span></div>
+        </div>
+
+        <!-- Rank and Fid Section in one box -->
+        <div class="rank-fid-box">
+            <div class="stats">Rank: <span class="highlight">466</span></div>
+            <div class="stats">Fid: <span class="highlight">366713</span></div>
+        </div>
+
+        <!-- Allowance, Tomorrow (Est.) Section in one box -->
+        <div class="allowance-box">
+            <div class="stats">Allowance: <span class="highlight">2,639</span></div>
+            <div class="stats">Tomorrow (Est.): <span class="highlight">2,660</span></div>
+        </div>
+
+        <!-- Additional Stats Section -->
+        <div class="stats">Reloads in: <span class="highlight">8 hours 9 minutes</span></div>
+        <div class="stats points-box">Points: 30,532</div>
+        <div class="stats">Today Locked: <span class="highlight">400,000 / 754M</span></div>
+        <div class="stats">Tomorrow Locked: <span class="highlight">400,000 / 747M</span></div>
+        <div class="stats">Openrank Points: <span class="highlight">518</span></div>
+        <div class="stats">Additional / Total Lock for Max Allowance: <span class="highlight">1,173,941 / 1,573,941</span></div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Created by @hephaes
+        </div>
+    </div>
+</body>
+</html>
